@@ -1185,7 +1185,7 @@ def reqister():
 
 def main():
     db_session.global_init("db/polzovateli.sqlite")
-    app.run(debug=False, host='0.0.0.0')
+    app.run(port=8080, host='127.0.0.1')
 
 
 if __name__ == '__main__':
