@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <title>{{title}}</title>
+</head>
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/glav"><img src="static\img\face.png"></a>
+
+        {% if current_user.is_authenticated %}
+        <h25 align="center">Выбирай аватарку!</h25>
+        <a class="btn" href="/profil" style="background-color: red; border-color: red; color: white">Назад</a>
+
+        {% else %}
+        <p>
+            <a class="btn btn-primary " href="/register">Регистрация</a>
+            <a class="btn btn-success" href="/login">Вход</a>
+        </p>
+        {% endif %}
+    </nav>
+</header>
+<a>
+    <table border="5" width="100%">
+        <tr>
+            <td><a class="navbar-brand" href="/podt/1"><img src="static\img\i_1.png"></a></td>
+            <td><a class="navbar-brand" href="/podt/2"><img src="static\img\i_2.png"></a></td>
+            <td><a class="navbar-brand" href="/podt/3"><img src="static\img\i_3.png"></a></td>
+        </tr>
+        <tr>
+            <td><a class="navbar-brand" href="/podt/4"><img src="static\img\i_4.png"></a></td>
+            <td><a class="navbar-brand" href="/podt/5"><img src="static\img\i_5.png"></a></td>
+            <td><a class="navbar-brand" href="/podt/6"><img src="static\img\i_6.png"></a></td>
+        </tr>
+        <tr>
+            <td><a class="navbar-brand" href="/podt/7"><img src="static\img\i_7.png"></a></td>
+            <td><a class="navbar-brand" href="/podt/8"><img src="static\img\i_8.png"></a></td>
+            <td><a class="navbar-brand" href="/podt/9"><img src="static\img\i_9.png"></a></td>
+        </tr>
+        <tr>
+            <td><a class="navbar-brand" href="/podt/10"><img src="static\img\i_10.png"></a></td>
+            <td><a class="navbar-brand" href="/podt/11"><img src="static\img\i_11.png"></a></td>
+            <td><a class="navbar-brand" href="/podt/12"><img src="static\img\i_12.png"></a></td>
+        </tr>
+    </table>
+</a>
+<br><opo><a href="/sbrosava" class="btn btn-primary myButtonStyle" role="button" style="background-color: red; border-color: red; color: white; margin-top: 10 px"><h17>Сбросить аватарку на стандартную</h17></a></opo>
+<br><opo><a href="/zagruzit_avy" class="btn btn-primary myButtonStyle" role="button" style="background-color: Chartreuse; border-color: Chartreuse; color: white"><h17>Поставить свою аватарку</h17></a></opo>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <title>{{title}}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light bg-light">
+
+
+        {% if current_user.is_authenticated %}
+        <a class="navbar-brand" href="/glav"><img src="static\img\d.png"></a>
+        <a> <h5 align="center">Магазин</h5> </a>
+        {% if current_user.avatarka == '-1' %}
+        <a class="navbar-brand" href="/profil"><img style=" max-width: 100px; max-height: 100px" src="data:;base64,{{ svoya }}"/></a>
+        {% else %}
+        <a class="navbar-brand" href="/profil"><img src="static\img\p{{ current_user.avatarka }}.png"></a>
+        {% endif %}
+        {% else %}
+        <a class="navbar-brand" href="/glav"><img src="static\img\angry3.png"></a>
+        <p>
+            <a class="btn btn-primary " href="/register">Регистрация</a>
+            <a class="btn btn-success" href="/login">Вход</a>
+        </p>
+        {% endif %}
+
+    </nav>
+    <a>
+    </a>
+</header>
+</body>
+<body2>
+    <h33 align="center">Ваш баланс монет: <h34>{{ current_user.balance }}</h34> <img src="static\img\monetka.png"> </h33>
+    <table border="20px black" width="100%">
+    <tr>
+        <th style="text-align: center; vertical-align: middle;"><h12>Персонаж</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Стоимость</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Кнопка</h12></th>
+    </tr>
+    <tr>
+        <td><img src="static\img\1.png"></td>
+        <td><h13>100</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/1"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\2.png"></td>
+        <td><h13>150</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/2"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\3.png"></td>
+        <td><h13>100000</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/3"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\4.png"></td>
+        <td><h13>200</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/4"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\5.png"></td>
+        <td><h13>300</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/5"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\6.png"></td>
+        <td><h13>500</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/6"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\7.png"></td>
+        <td><h13>400</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/7"><h29>Купить</h29></a></td>
+    </tr><tr>
+        <td><img src="static\img\8.png"></td>
+        <td><h13>450</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/8"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\9.png"></td>
+        <td><h13>550</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/9"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\10.png"></td>
+        <td><h13>600</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/10"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\11.png"></td>
+        <td><h13>700</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/11"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\12.png"></td>
+        <td><h13>800</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/12"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\13.png"></td>
+        <td><h13>900</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/13"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\14.png"></td>
+        <td><h13>1000</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/14"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\15.png"></td>
+        <td><h13>1100</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/15"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\16.png"></td>
+        <td><h13>1200</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/16"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\17.png"></td>
+        <td><h13>1300</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/17"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\18.png"></td>
+        <td><h13>1300</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/18"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\19.png"></td>
+        <td><h13>2000</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/19"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\20.png"></td>
+        <td><h13>1900</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/20"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\21.png"></td>
+        <td><h13>3000</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/21"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\22.png"></td>
+        <td><h13>5000</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/22"><h29>Купить</h29></a></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\24.png"></td>
+        <td><h13>10000</h13></td>
+        <td><a class="btn btn-success" href="/pokupka/26"><h29>Купить</h29></a></td>
+    </tr>
+    </table>
+</body2>
+</html>

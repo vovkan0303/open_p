@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <title>{{title}}</title>
+
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light bg-light">
+        {% if current_user.is_authenticated %}
+        {% else %}
+        <a class="navbar-brand" href="/"><img src="static\img\angry3.png"></a>
+        <p>
+            <a class="btn btn-primary " href="/register">Регистрация</a>
+            <a class="btn btn-success" href="/login">Вход</a>
+        </p>
+        {% endif %}
+    </nav>
+</header>
+{% if current_user.is_authenticated %}
+    <center><h26 align="center">Начало</h26></center>
+    <br><center><h15 align="center">Нажмите кнопку старт и вы войдёте на сайт</h15></center>
+    <br><center><a class="btn btn-primary" href="/glav"><h42>START</h42></a></center>
+    {% else %}
+    <center><h15>Зарегистрируйтесь!</h15>
+    <br><img src="static\img\angry.png"></center>
+    {% endif %}
+</body>
+</html>

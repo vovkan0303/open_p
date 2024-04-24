@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <title>{{title}}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/glav"><img src="static\img\23.png"></a>
+
+        {% if current_user.is_authenticated %}
+        <a> <h10>Инвентарь</h10> </a>
+        {% if current_user.avatarka == '-1' %}
+        <a class="navbar-brand" href="/profil"><img style=" max-width: 100px; max-height: 100px" src="data:;base64,{{ svoya }}"/></a>
+        {% else %}
+        <a class="navbar-brand" href="/profil"><img src="static\img\p{{ current_user.avatarka }}.png"></a>
+        {% endif %}
+        {% else %}
+        <p>
+            <a class="btn btn-primary " href="/register">Регистрация</a>
+            <a class="btn btn-success" href="/login">Вход</a>
+        </p>
+        {% endif %}
+
+    </nav>
+
+    <h4>Сайт сделан на питон</h4>
+</header>
+<main style="margin:15px;">
+    <table border="20px black" width="100%">
+    <tr>
+        <th style="text-align: center; vertical-align: middle;"><h12>Фото</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Сколько</h12></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        {% if current_user.sk_1 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\1_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\1.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_1 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/1"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/1"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_2 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\2_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\2.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_2 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/2"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/2"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_3 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\3_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\3.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_3 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/3"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/3"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_4 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\4_i_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\4_i.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_4 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/4"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/4"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_5 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\5_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\5.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_5 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/5"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/5"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_6 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\6_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\6.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_6 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/6"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/6"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_7 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\7_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\7.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_7 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/7"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/7"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_8 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\8_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\8.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_8 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/8"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/8"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_9 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\9_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\9.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_9 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/9"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/9"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_10 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\10_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\10.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_10 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/10"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/10"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_11 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\11_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\11.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_11 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/11"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/11"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_12 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\12_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\12.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_12 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/12"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/12"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_13 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\13_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\13.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_13 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/13"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/13"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_14 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\14_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\14.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_14 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/14"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/14"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_15 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\15_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\15.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_15 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/15"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/15"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_16 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\16_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\16.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_16 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/16"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/16"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_17 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\17_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\17.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_17 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/17"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/17"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_18 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\18_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\18.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_5 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/18"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/18"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_19 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\19_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\19.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_19 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/19"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/19"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_20 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\20_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\20.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_20 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/20"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/20"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_21 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\21_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\21.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_21 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/21"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/21"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_22 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\22_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\22.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_22 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/22"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/22"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    <tr>
+        {% if current_user.sk_26 == '0' %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\24_t.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>0</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h29>НЕТ</h29></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Можете приобрести в магазине или выбить из бокса</h12></th>
+        {% else %}
+        <th style="text-align: center; vertical-align: middle;"><img src="static\img\24.png"></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>{{ current_user.sk_26 }}</h12></th>
+        <th><a class="btn btn-primary" href="/podt_prodat/26"><h29>Продать одну</h29></a></th>
+        <th><a class="btn btn-danger" href="/podt_prodat_vse/26"><h29>Продать всё</h29></a></th>
+        {% endif %}
+    </tr>
+    </table>
+</main>
+</body>
+</html>

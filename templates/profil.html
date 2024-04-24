@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <title>{{title}}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/glav"><img src="static\img\25.png"></a>
+        {% if current_user.is_authenticated %}
+        <h5 align="center">Ваш профиль</h5>
+        <h33 align="center" href="/kurs_valut">Ваш баланс монет: <h34>{{ current_user.balance }}</h34> <a class="navbar-brand" href="/kurs_valut"><img src="static\img\monetka.png"></a></h33>
+        {% else %}
+        <p>
+            <a class="btn btn-primary " href="/register">Регистрация</a>
+            <a class="btn btn-success" href="/login">Вход</a>
+        </p>
+        {% endif %}
+
+    </nav>
+</header>
+<!-- Begin page content -->
+<table>
+    <tr>
+        <td>
+            <table border="20px black" width="30%">
+            <tr>
+                <td>{% if current_user.avatarka == '-1' %}
+                    <a class="navbar-brand" href="/ava" ><img style=" max-width: 500px; max-height: 500px" src="data:;base64,{{ svoya }}"/></a>
+                    {% else %}
+                    <a class="navbar-brand" href="/ava"><img src="static\img\i_{{ current_user.avatarka }}.png"></a>
+                    {% endif %}</td>
+            </tr>
+            <tr>
+                <td><h18>{{ current_user.name }} {{ current_user.surname }}</h18></td>
+            </tr>
+            </table>
+        </td>
+        <td>
+            <main style="margin:45px;">
+            <table>
+            <tr>
+                <td style="text-align: left"><h19>Вашe Имя:</h19> </td>  <td><h18>{{ current_user.name }}</h18> </td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><br><h20>Вашa Фамилия:</h20></td> <td><h18>{{ current_user.surname }}</h18></td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><br><h21>Ваш Возраст:</h21> </td>  <td><h18>{{ current_user.age }} лет</h18></td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><br><h22>Ваш Класс:</h22> </td>  <td><h18>{{ current_user.position }}</h18></td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><br><h23>Ваша Буква Класса:</h23> </td>  <td><h18>{{ current_user.speciality }}</h18></td>
+            </tr>
+            <tr>
+                <td style="text-align: left"><br><h24>Ваш Номер школы:</h24> </td>  <td><h18>{{ current_user.address }}</h18></td>
+            </tr>
+        </table>
+        </main>
+        </td>
+    </tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <title>{{title}}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/glav"><img src="static\img\zn_b.png"></a>
+
+        {% if current_user.is_authenticated %}
+        <h2 align="center">Выбирай и открывай боксы!</h2>
+        {% if current_user.avatarka == '-1' %}
+        <a class="navbar-brand" href="/profil"><img style=" max-width: 100px; max-height: 100px" src="data:;base64,{{ svoya }}"/></a>
+        {% else %}
+        <a class="navbar-brand" href="/profil"><img src="static\img\p{{ current_user.avatarka }}.png"></a>
+        {% endif %}
+        {% else %}
+        <p>
+            <a class="btn btn-primary " href="/register">Регистрация</a>
+            <a class="btn btn-success" href="/login">Вход</a>
+        </p>
+        {% endif %}
+    </nav>
+    <h4>Боксы</h4>
+</header>
+</body>
+<table width="100%">
+    <tr>
+        <td><a class="navbar-brand" href="/boxe1"><img src="static\img\1_b.png"></a></td>
+        <td><a class="navbar-brand" href="/boxe2"><img src="static\img\2_b.png"></a></td>
+        <td><a class="navbar-brand" href="/boxe3"><img src="static\img\3_b.png"></a></td>
+    </tr>
+    <tr>
+        <td><h19>Кругляшки</h19></td>
+        <td><h21>Квадратики</h21></td>
+        <td><h22>Разные</h22></td>
+    </tr>
+</table>
+</html>

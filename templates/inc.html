@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css"/>
+    <title>{{title}}</title>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light bg-light">
+        <a class="navbar-brand" href="/glav"><img src="static\img\inc2_b.png"></a>
+
+        {% if current_user.is_authenticated %}
+        <h11 align="center">Энциклопедия персонажей</h11>
+        {% if current_user.avatarka == '-1' %}
+        <a class="navbar-brand" href="/profil"><img style=" max-width: 100px; max-height: 100px" src="data:;base64,{{ svoya }}"/></a>
+        {% else %}
+        <a class="navbar-brand" href="/profil"><img src="static\img\p{{ current_user.avatarka }}.png"></a>
+        {% endif %}
+        {% else %}
+        <p>
+            <a class="btn btn-primary " href="/register">Регистрация</a>
+            <a class="btn btn-success" href="/login">Вход</a>
+        </p>
+        {% endif %}
+
+    </nav>
+</header>
+<!-- Begin page content -->
+<main style="margin:15px;">
+    <table border="20px black" width="100%">
+    <tr>
+        <th style="text-align: center; vertical-align: middle;"><h12>Фото</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Имя</h12></th>
+        <th style="text-align: center; vertical-align: middle;"><h12>Описание</h12></th>
+    </tr>
+    <tr>
+        <td><img src="static\img\1.png"></td>
+        <td><h13>Печенька</h13></td>
+        <td><h14>Обычная печенька и всё</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\2.png"></td>
+        <td><h13>Розовая печенька</h13></td>
+        <td><h14>Обычная розовая печенька</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\3.png"></td>
+        <td><h13>Мистер Печенька</h13></td>
+        <td><h14>Легендарная золотая печенька (Сложно получить)</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\4.png"></td>
+        <td><h13>Кот</h13></td>
+        <td><h14>Обычный серый кот</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\5.png"></td>
+        <td><h13>Обычный круг</h13></td>
+        <td><h14>Обычный круг</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\6.png"></td>
+        <td><h13>Марс</h13></td>
+        <td><h14>Планета Марс</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\7.png"></td>
+        <td><h13>Куб</h13></td>
+        <td><h14>Обычный куб</h14></td>
+    </tr><tr>
+        <td><img src="static\img\8.png"></td>
+        <td><h13>Треугольник</h13></td>
+        <td><h14>Обычный треугольник</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\9.png"></td>
+        <td><h13>Зелёный Треугольник</h13></td>
+        <td><h14>Необычный зелёный треугольник</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\10.png"></td>
+        <td><h13>Розовый Треугольник</h13></td>
+        <td><h14>Необычный розовый треугольник</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\11.png"></td>
+        <td><h13>Пятиугольник</h13></td>
+        <td><h14>Обычный Пятиугольник</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\12.png"></td>
+        <td><h13>Пятиугольник <br>с визором</h13></td>
+        <td><h14>Пятиугольник с синим визором</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\13.png"></td>
+        <td><h13>Синий пятиугольник <br>с визором</h13></td>
+        <td><h14>Необычный синий пятиугольник с красным визором</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\14.png"></td>
+        <td><h13>Шестиугольник</h13></td>
+        <td><h14>Обычный шестиугольник</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\15.png"></td>
+        <td><h13>Шестиугольник с визором</h13></td>
+        <td><h14>Необычный шестиугольник с зелёным визором</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\16.png"></td>
+        <td><h13>Фиолетовый шестиугольник</h13></td>
+        <td><h14>Редкий фиолетовый шестиугольник с зелёным визором и жёлтой улыбкой</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\17.png"></td>
+        <td><h13>Зелёный ромб</h13></td>
+        <td><h14>Необычный зелёный ромб</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\18.png"></td>
+        <td><h13>Синий ромб</h13></td>
+        <td><h14>Необычный синий ромб</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\19.png"></td>
+        <td><h13>Жёлтый куб</h13></td>
+        <td><h14>Эпический жёлтый куб</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\20.png"></td>
+        <td><h13>Чёрный куб</h13></td>
+        <td><h14>Эпический чёрный куб</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\21.png"></td>
+        <td><h13>Круглый Спайк</h13></td>
+        <td><h14>Легендарный Круглый Спайк</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\22.png"></td>
+        <td><h13>Круглый Спайк <br>с руками и ногами</h13></td>
+        <td><h14>Легендарный Круглый Спайк <br>с руками и ногами</h14></td>
+    </tr>
+    <tr>
+        <td><img src="static\img\24.png"></td>
+        <td><h13>ОООоооо</h13></td>
+        <td><h14>ОООоооо</h14></td>
+    </tr>
+    </table>
+</main>
+<opo><a href="/inc" class="btn btn-primary myButtonStyle" role="button" style="background-color: red; border-color: red; color: white"><h17>Назад</h17></a></opo>
+</body>
+</html>
