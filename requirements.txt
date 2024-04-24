@@ -1,0 +1,18 @@
+flask
+flask_login
+random
+sqlalchemy as sa
+sqlalchemy.orm as orm
+sqlalchemy.ext.declarative as dec
+flask_wtf
+wtforms
+wtforms.validators
+sqlalchemy
+werkzeug.security
+base64
+datetime
+sqlite3
+time
+from base64 import b64encode
+requests
+from bs4 import BeautifulSoup
