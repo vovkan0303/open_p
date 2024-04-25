@@ -1,9 +1,9 @@
+from pip._vendor import requests
 import base64
 import datetime
 import sqlite3
 import time
 from base64 import b64encode
-
 from flask import Flask, render_template, redirect, g, request, url_for
 from flask_login import LoginManager, login_user, login_required, logout_user
 import random
@@ -11,8 +11,8 @@ from data import db_session
 from data.login_form import LoginForm
 from data.register_form import RegisterForm
 from data.users import User
-import requests
 from bs4 import BeautifulSoup
+import os
 
 
 class Currency:
@@ -98,7 +98,8 @@ class Currency:
         currency_jry = float(self.get_currency_price_e().replace(",", "."))
         currency_azn = float(self.get_currency_price_d().replace(",", "."))
         with open('static/text/kurs.txt', 'w+', encoding='utf-8') as f:
-            vremya = datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+            offset = datetime.timezone(datetime.timedelta(hours=3))
+            vremya = datetime.datetime.now(offset).strftime('%Y-%m-%d %H:%M:%S')
             f.write("1 монета = 1 Рубль\n"
                     "100 монет = " + str(currency_e) + ' Евро\n'
                                                        "100 монет = " + str(
@@ -1185,7 +1186,8 @@ def reqister():
 
 def main():
     db_session.global_init("db/polzovateli.sqlite")
-    app.run(port=8080, host='127.0.0.1')
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host='0.0.0.0', port=port)
 
 
 if __name__ == '__main__':

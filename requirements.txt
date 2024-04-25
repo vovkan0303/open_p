@@ -1,18 +1,22 @@
-flask
+flask~=3.0.2
 flask_login
 random
 sqlalchemy as sa
 sqlalchemy.orm as orm
 sqlalchemy.ext.declarative as dec
 flask_wtf
-wtforms
+wtforms~=3.1.2
 wtforms.validators
-sqlalchemy
+sqlalchemy~=2.0.28
 werkzeug.security
 base64
 datetime
 sqlite3
 time
 from base64 import b64encode
-requests
+requests~=2.31.0
 from bs4 import BeautifulSoup
+werkzeug~=3.0.1
+PyQt5~=5.15.9
+beautifulsoup4~=4.12.3
+pip~=23.3
